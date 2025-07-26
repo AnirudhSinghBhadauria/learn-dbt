@@ -1,6 +1,7 @@
 WITH src_reviews AS (
     SELECT * 
-    FROM AIRBNB.RAW.RAW_REVIEWS
+    -- FROM AIRBNB.RAW.RAW_REVIEWS - defined a source for this!
+    FROM {{ source('airbnb', 'reviews') }}
 )
 SELECT 
 

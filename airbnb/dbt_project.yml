@@ -34,4 +34,6 @@ models:
     +materialized: view # default models will be view
     dim: 
       +materialized: table  
+    src:
+      +materialized: ephemeral
 

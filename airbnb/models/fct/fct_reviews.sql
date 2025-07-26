@@ -14,4 +14,12 @@ where review_text is not null
 
 {% if is_incremental() %}
      AND review_date > (select max(review_date) from {{ this }})
-{% end if%}
+{% endif %}
+
+/*
+
+Here this refers to this model i.e 'fact_reviews'
+
+The logic is basically like, if we have more current review then it will be incrementally loaded in the table.
+
+ */
